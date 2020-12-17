@@ -10,10 +10,4 @@
 *
 *}
 
-{*
-*https://build.prestashop.com/news/module-development-changes-in-17/#general-information
-* gYou should add the nofilter tag if you print HTML
-* You should remove all your |escape:'html':'UTF-8' (FOR FRONT OFFICE TEMPLATES ONLY).
-*}
-
 {$form nofilter}

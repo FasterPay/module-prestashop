@@ -391,6 +391,11 @@ class FasterPay extends PaymentModule
         if ($newOrderState->id == Configuration::get('PS_OS_REFUND')) {
             // full refund handler
             $order = new Order((int)$orderId);
+
+            if (!empty($order->module) && $order->module != $this->name) {
+                return;
+            }
+
             $refundAmount = $order->total_paid;
             $transactionId = $this->getPaymentService()->getTransactionIdFromOrder($order);
             if (!$transactionId) {
